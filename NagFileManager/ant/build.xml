@@ -1,0 +1,39 @@
+<project name="NagFilemanager" default="copy">
+  <target name="init">
+    <echo message="Building NagFileManager Project" />
+    <property name = "server" value = "C:\Tomcat\" />
+    <property name = "work" value = "D:\Java\Kursi\Lekcii\09-Java_for_web\Homework\NagFileManager\"/>
+    				     
+  </target>
+
+  <target name="compile" depends="init">
+    <delete verbose = "true">
+    	<fileset dir="${work}build" />
+    </delete>
+    <javac srcdir="${work}src" destdir="${work}build">
+    	<classpath>
+    	    <fileset file="${server}lib\servlet-api.jar" />
+    	</classpath>
+    </javac>
+  </target>
+
+  <target name="create" depends="compile">
+    <delete dir= "${server}webapps\NagFileManager\" />
+    <mkdir  dir= "${server}webapps\NagFileManager" />
+    <mkdir  dir= "${server}webapps\NagFileManager\WEB-INF" />
+    <mkdir  dir= "${server}webapps\NagFileManager\images" />
+  </target>
+
+  <target name="copy" depends="create">
+    <copy file= "${work}WEB-INF\web.xml" todir="${server}webapps\NagFileManager\WEB-INF\" />
+    <copy todir="${server}webapps\NagFileManager\">
+    	<fileset dir="${work}html"/>
+    </copy>
+    <copy todir="${server}webapps\NagFileManager\images">
+    	<fileset dir="${work}images"/>
+    </copy>
+    <copy todir="${server}webapps\NagFileManager\WEB-INF\classes">
+    	<fileset dir="${work}build"/>
+    </copy>
+  </target>
+</project>

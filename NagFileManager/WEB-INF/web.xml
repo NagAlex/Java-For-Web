@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+  <display-name>NagFileManager</display-name>
+
+  <!-- Start of servlet description section-->
+  <servlet>
+      <servlet-name>FileManagerServlet</servlet-name>
+      <servlet-class>FileManagerServlet</servlet-class>
+      <init-param>
+          <param-name>home</param-name>
+          <param-value>d:\</param-value>
+      </init-param>
+  </servlet>
+  <servlet>
+      <servlet-name>EditFileServlet</servlet-name>
+      <servlet-class>EditFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+      <servlet-name>DeleteFileServlet</servlet-name>
+      <servlet-class>DeleteFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+      <servlet-name>AskDeleteFileServlet</servlet-name>
+      <servlet-class>AskDeleteFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+      <servlet-name>ReadFileServlet</servlet-name>
+      <servlet-class>ReadFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+      <servlet-name>AskCreateFileServlet</servlet-name>
+      <servlet-class>AskCreateNewFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+      <servlet-name>CreateFileServlet</servlet-name>
+      <servlet-class>CreateNewFileServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>FileManagerServlet</servlet-name>
+      <url-pattern>/FileManager</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>EditFileServlet</servlet-name>
+      <url-pattern>/EditFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>DeleteFileServlet</servlet-name>
+      <url-pattern>/DeleteFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>AskDeleteFileServlet</servlet-name>
+      <url-pattern>/AskDelete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>ReadFileServlet</servlet-name>
+      <url-pattern>/ReadFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>AskCreateFileServlet</servlet-name>
+      <url-pattern>/AskCreateFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>CreateFileServlet</servlet-name>
+      <url-pattern>/CreateFile</url-pattern>
+  </servlet-mapping>
+
+  <!-- End of servlet description section-->
+
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
